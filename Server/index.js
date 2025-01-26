@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:3001', // Frontend URL
+    origin: 'https://amaha-assingment.vercel.app/', // Frontend URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true, // Include credentials if necessary
   }));
