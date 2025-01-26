@@ -1,0 +1,650 @@
+/* General Layout */
+.kanban-board {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f4f7fc;
+    min-height: 100vh;
+    width: 95vw;
+    background-color: #fafafa;
+}
+
+/* Add New Column Section */
+.add-column {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-column input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 250px;
+}
+
+.add-column button {
+    padding: 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-column button:hover {
+    background-color: #357abd;
+}
+
+/* Columns Container */
+.columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Column Styles */
+.column {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    border-top: 5px solid #4a90e2;
+    transition: transform 0.3s ease;
+}
+
+.column:hover {
+    transform: scale(1.02);
+}
+
+/* Column Header */
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.column-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-task,
+.delete-column {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #4a90e2;
+    transition: color 0.3s ease;
+}
+
+.add-task:hover,
+.delete-column:hover {
+    color: #357abd;
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    overflow-y: auto;
+}
+
+/* Task Styles */
+.task {
+    background-color: #f0f4f8;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.columns .column:nth-child(1) {
+    border-top-color: black;
+    background-color: #fafafa;
+}
+
+.columns .column:nth-child(1) .task-card .task-column-name small {
+    color: white; /* Set text color to white */
+    background-color: #172a28; /* Set background color to black */
+    border-radius: 12px; /* Small radius for slight rounded corners */
+    padding: 4px 8px; /* Add some padding for better appearance */
+    display: inline-block; /* Make the element fit the content */
+}
+
+.columns .column:nth-child(2) {
+    border-top-color: yellow;
+    background-color: #fffee6;
+}
+
+.columns .column:nth-child(2) .task-card .task-column-name small {
+    color: white; /* Set text color to white */
+    background-color: rgb(95, 95, 28); /* Set background color to yellow */
+    border-radius: 12px; /* Small radius for slight rounded corners */
+    padding: 4px 8px; /* Add some padding for better appearance */
+    display: inline-block; /* Make the element fit the content */
+}
+
+.columns .column:nth-child(3) {
+    border-top-color: red;
+    background-color: #fff5f5;
+}
+
+.columns .column:nth-child(3) .task-card .task-column-name small {
+    color: white; /* Set text color to white */
+    background-color: rgb(84, 33, 33); /* Set background color to red */
+    border-radius: 12px; /* Small radius for slight rounded corners */
+    padding: 4px 8px; /* Add some padding for better appearance */
+    display: inline-block; /* Make the element fit the content */
+}
+
+.columns .column:nth-child(4) {
+    border-top-color: green;
+    background-color: #f5fff5;
+}
+
+.columns .column:nth-child(4) .task-card .task-column-name small {
+    color: white; /* Set text color to white */
+    background-color: green; /* Set background color to green */
+    border-radius: 12px; /* Small radius for slight rounded corners */
+    padding: 4px 8px; /* Add some padding for better appearance */
+    display: inline-block; /* Make the element fit the content */
+}
+
+.columns .column:nth-child(5) {
+    border-top-color: orange;
+    background-color: #fff9f2;
+}
+
+.columns .column:nth-child(5) .task-card .task-column-name small {
+    color: white; /* Set text color to white */
+    background-color: orange; /* Set background color to orange */
+    border-radius: 12px; /* Small radius for slight rounded corners */
+    padding: 4px 8px; /* Add some padding for better appearance */
+    display: inline-block; /* Make the element fit the content */
+}
+
+
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #38424c;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-input {
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    width: 200px;
+}
+
+.navbar-add {
+    padding: 8px 12px;
+    background-color: #357abd;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-add:hover {
+    background-color: #285a8a;
+}
+
+.navbar-icon {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-icon:hover {
+    opacity: 0.8;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .navbar {
+    background-color: #333;
+}
+
+.dark-mode .navbar-input {
+    background-color: #222;
+    color: white;
+}
+
+.dark-mode .navbar-add {
+    background-color: #444;
+}
+
+body.dark-mode .columns .column {
+    background-color: #1e1e1e;
+    border-top-color: #444;
+    color: white;
+}
+/* Task Card */
+.task {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: grab;
+    transition: transform 0.2s, background-color 0.3s, box-shadow 0.3s;
+    background-color: #f4f7fc;
+    color: #333;
+  }
+  
+  /* Hover Effect */
+  .task:hover {
+    transform: translateY(-5px);
+    background-color: #e7f1ff;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Task Title */
+  .task-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+    padding-right: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  /* Task Status Badge */
+  .task-status {
+    background-color: #4CAF50; /* Default status color */
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  /* Action Buttons (Optional) */
+  .task-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .task-actions button {
+    background: none;
+    border: none;
+    color: #007bff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.2s;
+  }
+  
+  .task-actions button:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  /* Different Backgrounds for Tasks (Status-based Color) */
+  .task.open {
+    border-left: 5px solid #3498db; /* Blue */
+    background-color: #eaf4ff;
+  }
+  
+  .task.in-progress {
+    border-left: 5px solid #f39c12; /* Orange */
+    background-color: #fff8e1;
+  }
+  
+  .task.in-review {
+    border-left: 5px solid #e74c3c; /* Red */
+    background-color: #ffe6e6;
+  }
+  
+  .task.completed {
+    border-left: 5px solid #2ecc71; /* Green */
+    background-color: #d4f7d4;
+  }
+  
+  /* Task Priority Badge (Optional) */
+  .task-priority {
+    background-color: #e67e22; /* Orange for High Priority */
+    color: white;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  /* Task description */
+  .task-description {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+  
+  /* Task Actions (delete, edit) */
+  .task-actions button {
+    font-size: 1.2rem;
+    color: #e74c3c; /* Red */
+  }
+  
+  .task-actions button:hover {
+    color: #c0392b; /* Darker red */
+  }
+
+/* Task Form Modal Overlay */
+.task-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Task Form Modal */
+.task-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 90%;
+    z-index: 1001; /* Ensure it's above the overlay */
+}
+
+/* Task Form Input/Buttons */
+.task-form input,
+.task-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.task-form button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-form button:hover {
+    background-color: #2980b9;
+}
+
+.task-form button[type="button"] {
+    background-color: #e74c3c;
+    margin-left: 10px;
+}
+
+.task-form button[type="button"]:hover {
+    background-color: #c0392b;
+}
+/* KanbanBoard.css */
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #2f3542;
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #1e242f;
+    padding-left: 10px;
+  }
+  
+  .sidebar-item span {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  
+  /* Main content */
+  .main-content {
+    margin-left: 250px;
+    padding: 20px;
+  }
+  
+  .kanban-board.dark .sidebar {
+    background-color: #212529;
+  }
+  
+  .kanban-board.dark .sidebar-item:hover {
+    background-color: #343a40;
+  }
+  .kanban-board {
+    display: flex;
+  }
+  
+  .sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-right: 1px solid #ddd;
+  }
+  
+  .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .sidebar ul li svg {
+    margin-right: 0.5rem;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    padding: 1rem;
+  }
+
+  
+  /* Task List Styles */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Base style for each task card */
+  .task-card {
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    height: 150px; /* Increased height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space out the content */
+  }
+  
+  .task-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Header styling */
+  .task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .priority-label {
+    background-color: #fff;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 14px;
+  }
+  
+  /* Column name styling */
+  .task-column-name {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #777;
+    font-style: italic;
+  }
+  
+  /* Task description and due date */
+  .task-description {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .due-date {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  /* Assigned user initials */
+  .assigned-user {
+    margin-top: 10px;
+  }
+  
+  .assigned-user-initials {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 14px;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+  
+  /* Task Actions */
+  .task-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  /* Priority specific styles */
+  .high-priority {
+
+    border-left: 5px solid #d40000;
+  }
+  
+  .medium-priority {
+
+    border-left: 5px solid #e0a800;
+  }
+  
+  .low-priority {
+  
+    border-left: 5px solid #28a745;
+  }
+  
+  /* Edit and delete button styles */
+  .edit-task, .delete-task {
+    background-color: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+  }
+  
+  .edit-task:hover, .delete-task:hover {
+    color: #007bff;
+  }
+  

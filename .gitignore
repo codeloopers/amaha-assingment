@@ -20,3 +20,9 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+# Ignore node_modules
+node_modules/
+
+# Ignore .env files
+.env

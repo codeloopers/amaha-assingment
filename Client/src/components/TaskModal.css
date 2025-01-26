@@ -1,0 +1,259 @@
+/* TaskModal.css */
+
+/* Background overlay for the modal */
+.task-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal container styling */
+  .task-modal {
+    background-color: #fff;
+    border-radius: 16px;
+    width: 420px;
+    padding: 24px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Title of the modal */
+  .task-modal h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #212121;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Form inputs styling */
+  .task-modal input,
+  .task-modal textarea {
+    width: 92%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-modal input:focus,
+  .task-modal textarea:focus {
+    border-color: #6200ee;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(98, 0, 238, 0.3);
+  }
+  
+  /* Textarea specific styling */
+  .task-modal textarea {
+    resize: vertical;
+    height: 120px;
+    padding-top: 12px;
+  }
+  
+  /* Buttons container */
+  .task-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  /* Add Task button styling */
+  .task-modal .add-task-btn {
+    background-color: red; /* Material Design Purple */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 48%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+ 
+  
+  /* Cancel button styling */
+  .task-modal .cancel-btn {
+    background-color: #f5f5f5; /* Light gray */
+    color: #333;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 48%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .task-modal .cancel-btn:hover {
+    background-color: #e0e0e0; /* Slightly darker gray for hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Close button styling in the modal header */
+  .task-modal .close-modal {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 24px;
+    color: #757575;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .task-modal .close-modal:hover {
+    color: #d32f2f;
+  }
+  
+  /* Animation for modal appearance */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Add subtle hover effect to the modal container */
+  .task-modal:hover {
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.25);
+  }
+  /* Priority Section */
+.priority-section {
+    margin: 15px 0;
+  }
+  
+  .priority-section p {
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .priority-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .priority-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .priority-option input[type="radio"] {
+    display: none;
+  }
+  
+  .priority-option.active {
+    border: 2px solid #333;
+    background-color: #f0f0f0;
+  }
+  
+  .priority-option.high-priority {
+    color: #ff4d4d; /* Red for High Priority */
+  }
+  
+  .priority-option.medium-priority {
+    color: #ffa500; /* Orange for Medium Priority */
+  }
+  
+  .priority-option.low-priority {
+    color: #4caf50; /* Green for Low Priority */
+  }
+  
+  
+  /* Task Modal Actions */
+  .task-modal-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .add-task-btn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .add-task-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .cancel-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #e53935;
+  }
+  /* Assign User Section */
+.assign-user-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .assign-user-section p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  .assign-user-section select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .assign-user-section select:focus {
+    background-color: #fff;
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(72, 144, 226, 0.5);
+  }
+  
