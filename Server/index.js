@@ -7,11 +7,28 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 const app = express();
-app.use(cors({
-    origin: 'https://amaha-assingment.vercel.app/', // Frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true, // Include credentials if necessary
-  }));
+var cors = require('cors');
+
+// Define the allowed origin
+const allowedOrigins = ['https://amaha-assingment.vercel.app'];
+
+// Use CORS with specific origin
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: 'GET, PUT, POST, DELETE',
+    allowedHeaders: 'Content-Type',
+  })
+);
+
+app.options('*', cors());
+
 app.use(express.json());
 
 // Constants
