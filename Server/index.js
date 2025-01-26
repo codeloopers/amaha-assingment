@@ -7,27 +7,19 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 const app = express();
-var cors = require('cors');
+const cors = require('cors');
 
-// Define the allowed origin
-const allowedOrigins = ['https://amaha-assingment.vercel.app'];
-
-// Use CORS with specific origin
+// Allow all origins
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: 'GET, PUT, POST, DELETE',
-    allowedHeaders: 'Content-Type',
+    origin: '*',  // This allows all origins
+    methods: 'GET, POST, PUT, DELETE',  // Allowed HTTP methods
+    allowedHeaders: 'Content-Type, Authorization',  // Allowed headers
   })
 );
 
-app.options('*', cors());
+app.options('*', cors());  // Handle preflight requests for all routes
+
 
 app.use(express.json());
 
